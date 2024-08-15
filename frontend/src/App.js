@@ -175,7 +175,7 @@ const PaymentForm = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={12}>
-                  <Box sx={{ pb: 2 }}>
+                  <Box>
                     <InputLabel sx={{ py: 0.5, color: "#49454F" }}>
                       Card Number
                     </InputLabel>
@@ -204,8 +204,8 @@ const PaymentForm = () => {
                       placeholder="1234 1234 1234 1234"
                       InputProps={{
                         startAdornment: (
-                          <InputAdornment position="end">
-                            <IconButton edge="end" sx={{ p: 0 }}>
+                          <InputAdornment position="start">
+                            <IconButton edge="end">
                               <CreditCard className="main-color" />
                             </IconButton>
                           </InputAdornment>
