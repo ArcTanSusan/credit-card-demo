@@ -278,10 +278,11 @@ const PaymentForm = () => {
                 }}
                 className="normal-text"
               >
-               {isValid ? "Paid" : "Pay Now"} 
+               {isValid  && formik.touched.cardNumber ? "Paid" : "Pay Now"}
               </Button>
             </form>
-            <Box>{!isValid && formik.touched.cardNumber && <div>Invalid card number!</div>}</Box>
+            <Box>{!isValid && formik.touched.cardNumber && <div>Invalid card number.</div>}</Box>
+            <Box>{isValid && formik.touched.cardNumber && <div>Valid card number.</div>}</Box>
           </Box>
         </Box>
       </Box>
