@@ -9,4 +9,20 @@ Start in the backend directory at `backend/`. Follow these steps:
 
 # Notes
 
-I installed the cors library in the backend directory `backend/` in order to bypass the CORS cross origin requests issue between the frontend and backend ports.
+Frontend is React, formik, YUP schema validation while the backend is expressJS. There's only 1 backend API endpoint that does the credit card validation with Luhn algorithm. The frontend makes a single API call to this backend API when you click on the "PAY NOW" button on the form.
+
+The frontend runs on port 3001 whilst the backend runs on port 8000. I installed `cors` library in the backend directory `backend/` in order to bypass the CORS cross origin issue between the frontend and backend ports. In production, the domain name or port number is required to be the same.
+
+# Credit Card Form: Different UI States
+
+When the frontend starts up, you should see an empty credit card form:
+
+![Empty credit card form](/screenshots/credit_card_form.png)
+
+If you enter the incorrect credit card nubmer, then the button text remains at "PAY NOW" in red and there's an error message at the bottom of the form. 
+
+![Invalid credit card form](/screenshots/invalid-credit-card.png)
+
+If you enter the correct credit card nunber, then the button text changes from "PAY NOW" to "PAID" in blue and there's a confirmation message at the bottom.
+
+![Valid credit card form](/screenshots/valid-credit-card.png)
